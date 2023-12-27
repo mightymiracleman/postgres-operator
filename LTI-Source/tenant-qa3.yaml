@@ -1,0 +1,157 @@
+apiVersion: ltisolutions.dev/v1
+kind: LtiTenant
+metadata:
+  annotations:
+    argocd.argoproj.io/sync-wave: "3"
+  labels:
+    tenant-name: qa3
+    tenant-key: a51bf57f-525a-487d-8a62-ac15b6fab930
+  name: qa3
+spec:
+  analyticsSettings: {}
+  camundaSettings:
+    internalUriString: http://qa3_camunda:8080
+  certificateAlertEmail: rnd@leaseteam.com
+  channel: None
+  customer: internal
+  customerNumber: 0
+  includeHttpToHttpsRedirect: true
+  initialAdmins:
+  - emailAddress: tluther@ltisolutions.com
+    firstName: tom-home
+    lastName: LastName
+  isLocal: false
+  isMaintenanceMode: false
+  jobSettings: {}
+  keycloakServerSettings:
+    adminPassword: '@spireTest1'
+    adminUsername: lti_admin
+    externalUriString: https://notused.ltits.dev
+    internalUriString: http://keycloak-qa3:8080
+    postgresPassword: '@spireTest1'
+    postgresUsername: lti-admin
+  parentTenantKey: b842f139-df75-4037-b8ed-1a6d7302f661
+  partitions:
+  - certificateStatus: None
+    externalUriString: https://qa3.platform.ltilocal.dev
+    isPlatformPartition: true
+    keycloakRealmSettings:
+      clients:
+      - description: Default oauth client for platform realm
+        id: lti-oauth
+        name: lti-oauth
+        secret: 3613fbda-df3e-44ad-a1fa-9be21b3c4143
+        secretName: OAuthPlatform
+      - description: Admin client for platform realm
+        id: lti-admin
+        name: lti-admin
+        secret: 59415b2d-bb23-4237-ad9f-8b30e3c8c417
+        secretName: PlatformAdmin
+      externalUriString: https://qa3.platform.ltilocal.dev
+      loginUrl: https://qa3.platform.ltilocal.dev
+      realmName: platform
+      redirectUrl: https://qa3.platform.ltilocal.dev
+      smtpSettings:
+        fromDisplayName: LTi Technology Solutions
+        fromEmailAddress: admin@ltiplatform.com
+        internalUriString: http://postfix:25
+        replyToDisplayName: LTi Technology Solutions
+        replyToEmailAddress: admin@ltiplatform.com
+      uniqueId: 5bae3629-f0e8-41de-9dc8-9d6650c78481
+    maintenanceModeSettings:
+      header: Site Currently Undergoing Maintenance
+      message: This site is undergoing temporary maintenance and is currently offline. Please try back again soon.
+      title: Site Maintenance
+    partitionKey: 34afcd33-a50b-4880-a0ec-97924afd5641
+    partitionName: platform
+    partitionNamespace: 34afcd33-a50b-4880-a0ec-97924afd5641
+  - certificateStatus: None
+    externalUriString: https://qa3.ltilocal.dev
+    isPlatformPartition: false
+    keycloakRealmSettings:
+      clients:
+      - description: Default oauth client for partition default
+        id: lti-oauth
+        name: lti-oauth
+        secret: f6e1e9f2-5a97-4dff-ad47-d9c56b192750
+        secretName: OAuthDefault
+      - description: Public keycloak client for partition default
+        id: partition-public
+        name: partition-public
+        secret: 9efcb825-feb1-4978-bd56-d20501c98cd8
+        secretName: DefaultPartitionPublic
+      externalUriString: https://qa3.ltilocal.dev
+      loginUrl: https://qa3.ltilocal.dev
+      realmName: default
+      redirectUrl: https://qa3.ltilocal.dev
+      smtpSettings:
+        fromDisplayName: LTi Technology Solutions
+        fromEmailAddress: admin@ltiplatform.com
+        internalUriString: http://postfix:25
+        replyToDisplayName: LTi Technology Solutions
+        replyToEmailAddress: admin@ltiplatform.com
+      uniqueId: 5bae3629-f0e8-41de-9dc8-9d6650c78481
+    maintenanceModeSettings:
+      header: Site Currently Undergoing Maintenance
+      message: This site is undergoing temporary maintenance and is currently offline. Please try back again soon.
+      title: Site Maintenance
+    partitionKey: 3ca3dd09-758a-49a4-b6b6-9c372c4a6345
+    partitionName: default
+    partitionNamespace: 3ca3dd09-758a-49a4-b6b6-9c372c4a6345
+  - certificateStatus: None
+    externalUriString: https://qa3pl1.ltilocal.dev
+    isPlatformPartition: false
+    keycloakRealmSettings:
+      clients:
+      - description: Default oauth client for partition pl1
+        id: lti-oauth
+        name: lti-oauth
+        secret: 93f77b36-eaa7-4248-a935-fcaedd9838f8
+        secretName: OAuthPl1
+      - description: Public keycloak client for partition pl1
+        id: partition-public
+        name: partition-public
+        secret: 7e12d4ba-2693-40d9-a421-4ec57122bced
+        secretName: Pl1PartitionPublic
+      externalUriString: https://qa3pl1.ltilocal.dev
+      loginUrl: https://qa3pl1.ltilocal.dev
+      realmName: pl1
+      redirectUrl: https://qa3pl1.ltilocal.dev
+      smtpSettings:
+        fromDisplayName: LTi Technology Solutions
+        fromEmailAddress: admin@ltiplatform.com
+        internalUriString: http://postfix:25
+        replyToDisplayName: LTi Technology Solutions
+        replyToEmailAddress: admin@ltiplatform.com
+      uniqueId: 5bae3629-f0e8-41de-9dc8-9d6650c78481
+    maintenanceModeSettings:
+      header: Site Currently Undergoing Maintenance
+      message: This site is undergoing temporary maintenance and is currently offline. Please try back again soon.
+      title: Site Maintenance
+    partitionKey: cafe3e87-9bb6-4a91-b718-f6c7b3b4b692
+    partitionName: pl1
+    partitionNamespace: cafe3e87-9bb6-4a91-b718-f6c7b3b4b692
+  postgresSettings:
+    adminConnectionString: Host=pgcluster-qa3;Database=postgres;Username=lti-qa3;Password=@spireTest1;Port=;
+    databaseName: qa3
+    internalUriString: http://pgcluster-qa3:5432
+    password: '@spireTest1'
+    tenantConnectionString: Host=pgcluster-qa3;Database=qa3;Username=lti-qa3;Password=@spireTest1;Port=;
+    username: lti-qa3
+  rabbitMqSettings:
+    password: '@spireTest1'
+    username: qa3-user
+    virtualHost: qa3
+  routeKey: 2.531.0-PR1426.2917
+  routeResolutionDetail:
+    channelStatus: Channel [None] is applied to tenant.
+    isRouteResolutionPaused: false
+  seqSettings:
+    apiKey: ea2e59fd12034a379586498c4c450446
+  storageSettings:
+    connectionString: DefaultEndpointsProtocol=https;EndpointSuffix=core.windows.net;AccountName=88fd3fb2b8d65a12b70d9672;AccountKey=5OQyDS9dvJ6fqoE40V99h8bgPwKHvJBdQ9XcrwGBufMZmYodTUBUghuNSkOJVIeBwmxt+qPUAmYK+AStedC/DQ==;BlobEndpoint=https://88fd3fb2b8d65a12b70d9672.blob.core.windows.net/;FileEndpoint=https://88fd3fb2b8d65a12b70d9672.file.core.windows.net/;QueueEndpoint=https://88fd3fb2b8d65a12b70d9672.queue.core.windows.net/;TableEndpoint=https://88fd3fb2b8d65a12b70d9672.table.core.windows.net/
+    storageAccount: 88fd3fb2b8d65a12b70d9672
+  tenantKey: a51bf57f-525a-487d-8a62-ac15b6fab930
+  tenantName: qa3
+  tenantNamespace: b842f139-df75-4037-b8ed-1a6d7302f661
+  tenantType: None
