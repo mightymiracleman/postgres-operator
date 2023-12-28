@@ -1,7 +1,8 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name:  postgres-pod-config
+  name: pod-env-overrides
+  namespace: default
 data:
   USE_WALG_BACKUP: "true"
   BACKUP_SCHEDULE: "0 3,15 * * *" # Schedule a base backup at 3:00 and 15:00

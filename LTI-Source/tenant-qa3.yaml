@@ -142,7 +142,7 @@ spec:
     password: '@spireTest1'
     username: qa3-user
     virtualHost: qa3
-  routeKey: 2.531.0-pr1426.2920
+  routeKey: 2.531.0-pr1426.2922
   routeResolutionDetail:
     channelStatus: Channel [None] is applied to tenant.
     isRouteResolutionPaused: false
