@@ -1,36 +1,37 @@
-apiVersion: acid.zalan.do/v1
-kind: postgresql
+kind: "postgresql"
+apiVersion: "acid.zalan.do/v1"
+
 metadata:
-  creationTimestamp: "2023-12-27T17:40:35Z"
-  generation: 2
+  name: "pgcluster-qa3"
+  namespace: "default"
   labels:
-    team: architecture
-  name: pgcluster-qa3
-  namespace: default
-  resourceVersion: "2058715"
-  uid: 80669e65-62da-4c27-a63f-aa6f0aeb3431
+    team: acid
+
 spec:
-  allowedSourceRanges: null
-  connectionPooler:
-    mode: transaction
-    numberOfInstances: 1
-    schema: zalando
-    user: lti-qa3-pooled
-  enableMasterPoolerLoadBalancer: true
-  enableReplicaConnectionPooler: true
-  numberOfInstances: 1
+  teamId: "acid"
   postgresql:
     version: "13"
-  resources:
-    limits:
-      cpu: 500m
-      memory: 500Mi
-    requests:
-      cpu: 100m
-      memory: 100Mi
-  teamId: acid
+  numberOfInstances: 1
+  volume:
+    size: "10Gi"
   users:
     lti-admin: [SUPERUSER]
     lti-qa3: [SUPERUSER]
-  volume:
-    size: 10Gi
+  databases:
+    qa3: lti-qa3
+  allowedSourceRanges:
+    # IP ranges to access your cluster go here
+  enableMasterPoolerLoadBalancer: false
+  enableReplicaConnectionPooler: false
+  #connectionPooler:
+  #  mode: transaction
+  #  numberOfInstances: 1
+  #  schema: zalando
+  #  user: lti-qa3-pooled
+  resources:
+    requests:
+      cpu: 100m
+      memory: 100Mi
+    limits:
+      cpu: 500m
+      memory: 500Mi

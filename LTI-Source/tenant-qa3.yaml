@@ -132,7 +132,7 @@ spec:
     partitionName: pl1
     partitionNamespace: cafe3e87-9bb6-4a91-b718-f6c7b3b4b692
   postgresSettings:
-    adminConnectionString: Host=pgcluster-qa3;Database=postgres;Username=lti-qa3;Password=@spireTest1;Port=;
+    adminConnectionString: Host=pgcluster-qa3;Database=postgres;Username=lti-admin;Password=@spireTest1;Port=;
     databaseName: qa3
     internalUriString: http://pgcluster-qa3:5432
     password: '@spireTest1'
@@ -142,7 +142,7 @@ spec:
     password: '@spireTest1'
     username: qa3-user
     virtualHost: qa3
-  routeKey: 2.531.0-PR1426.2917
+  routeKey: 2.531.0-pr1426.2920
   routeResolutionDetail:
     channelStatus: Channel [None] is applied to tenant.
     isRouteResolutionPaused: false
