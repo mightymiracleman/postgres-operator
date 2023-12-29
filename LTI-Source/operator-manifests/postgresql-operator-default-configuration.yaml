@@ -154,7 +154,7 @@ configuration:
     # gcp_credentials: ""
     # kube_iam_role: ""
     # log_s3_bucket: ""
-    wal_az_storage_account: "z-pgcluster-backup"
+    wal_az_storage_account: "88fd3fb2b8d65a12b70d9672"  #LTI CHANGE
     # wal_gs_bucket: ""
     # wal_s3_bucket: ""
   logical_backup:
